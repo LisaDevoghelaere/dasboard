@@ -2,7 +2,7 @@
 define('DATABASE', 'dashboard');
 define('USER', 'root');
 define('PWD', '');
-define('HOST', 'dlocalhost');
+define('HOST', 'localhost');
 try{
     $dbh = new PDO('mysql:host='.HOST.';dbname='.DATABASE, USER, PWD);
 
@@ -10,5 +10,5 @@ try{
     print "Erreur !: " . $e->getMessage() . "<br/>";
     die;
 }
-
+?>
 
