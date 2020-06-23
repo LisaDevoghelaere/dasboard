@@ -29,3 +29,20 @@ $intlDateFormater = new IntlDateFormatter('fr_fr', IntlDateFormatter::SHORT, Int
 ```
 On fait ensuite une boucle foreach pour afficher les différentes lignes.
 On intègre aussi à chaque lignes deux "boutons" (liens) *Modifier* et *Supprimer* qui vont pointer respectivement vers **edit.php** et **delete.php**.
+afin de sécuriser les données on ajoute un if en dessous de ma table
+```
+<?php
+    if(count($resultat) === 0){
+        echo '<p>Aucune donnée disponible</p>';
+    }
+?>
+```
+### Supprimer une ligne
+On créer un fichier delete.php
+Pour des questions évidentes de sécurité on teste l'existence de la variable. Si c'est le cas on lance la requête en sql pour supprimer la ligne en la sélectionnant par l'id.
+```
+$sql = 'delete from stagiaire where id= :id';
+```
+On prépare la requête puis précise le type de données de la colone pour plus de sécurité. Enfin on exécute la requête
+
+### Ajouter/modifier une ligne
