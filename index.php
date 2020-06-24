@@ -56,6 +56,7 @@ require_once('db.php');
                 echo '<p>Aucune donnée disponible</p>';
             }
             ?>
+            <p><a href="edit.php"> Ajouter </a></p>
         </main>
     </body>
 </html>
