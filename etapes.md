@@ -46,3 +46,4 @@ $sql = 'delete from stagiaire where id= :id';
 On prépare la requête puis précise le type de données de la colone pour plus de sécurité. Enfin on exécute la requête
 
 ### Ajouter/modifier une ligne
+Tout d'abord on créé un doctype avec la structure de base en html. Puis on créé des variables vides pour  que le formulaire soit vide au chargement de la page. On pose une condition pour savoir si l'on passe en mode ajout ou modifier et une autre pour savoir s'il a été soumis. Cela permet de sécuriser le formulaire pour éviter une injection de sql. toujours dans cette optique chaque input est sécurisé de sorte à ce qu'il indique une erreur dans le cas où l'on ferait un envoi égal à 0 caractère. D'autre part la fonction bindParam veillera à ce que les entrées ne soient jamais comprises comme étant du code. Si toutes les conditions sont remplies alors l'entrée est ajoutée ou modifiée selon le cas.
