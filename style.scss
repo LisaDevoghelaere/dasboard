@@ -1,0 +1,102 @@
+/*----------------------------Variables--------------------------*/
+$titre: 'MuseoModerno', cursive;
+$cp-txt: 'Lato', sans-serif;
+$bg-main: #152036;
+$bg-secondary: #1b2a47;
+/*---------------------------------Base----------------------*/
+/*body
+{
+    margin : 0, auto;
+    font-family: $cp-txt;
+    color: white;
+    background-color: $bg-main;
+    h1{
+        font-family: $titre;
+        padding: 0.5rem;
+        font-size: 2rem;
+        a{
+            text-decoration: none;
+            color: white;
+            &:hover{
+                text-decoration: none;
+                color : rgb(252, 228, 19);
+            }
+        }
+    }
+}
+.container{
+    max-width: 1180px;
+    margin: auto;
+}
+header{
+    border-bottom: 1px solid $bg-secondary;   
+}
+h2{
+    font-family: $titre;
+    font-size: 2rem;
+    padding: 1rem;
+    color : rgb(252, 228, 19);
+}*/
+.animated-icon3 span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    
+    }
+    
+    .animated-icon3 span:nth-child(2) {
+    top: 10px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    
+    }
+    
+    .animated-icon3 span:nth-child(3) {
+    top: 20px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    
+    }
+    
+    .animated-icon3.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0px;
+    left: 8px;
+    
+    }
+    
+    .animated-icon3.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+    }
+    .white{
+        background-color: white;
+    }
+th, tr{
+    color : white;
+    text-align: center;
+}
+.bloc{
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: $bg-secondary;
+    max-width: 15rem;
+    form{
+        margin: auto;
+        input{
+            margin-bottom: 0.8rem;
+            border-radius: 5px;
+            border: 0;
+            padding: 0.5rem;
+        }
+    }
+}
