@@ -4,7 +4,7 @@ $cp-txt: 'Lato', sans-serif;
 $bg-main: #152036;
 $bg-secondary: #1b2a47;
 /*---------------------------------Base----------------------*/
-/*body
+body
 {
     margin : 0, auto;
     font-family: $cp-txt;
@@ -16,10 +16,10 @@ $bg-secondary: #1b2a47;
         font-size: 2rem;
         a{
             text-decoration: none;
-            color: white;
+            color : rgb(252, 228, 19);
             &:hover{
                 text-decoration: none;
-                color : rgb(252, 228, 19);
+                
             }
         }
     }
@@ -29,58 +29,16 @@ $bg-secondary: #1b2a47;
     margin: auto;
 }
 header{
-    border-bottom: 1px solid $bg-secondary;   
+    border-bottom: 2px solid white;   
 }
 h2{
     font-family: $titre;
     font-size: 2rem;
     padding: 1rem;
-    color : rgb(252, 228, 19);
-}*/
-.animated-icon3 span:nth-child(1) {
-    top: 0px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-    
-    }
-    
-    .animated-icon3 span:nth-child(2) {
-    top: 10px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-    
-    }
-    
-    .animated-icon3 span:nth-child(3) {
-    top: 20px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-    
-    }
-    
-    .animated-icon3.open span:nth-child(1) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 0px;
-    left: 8px;
-    
-    }
-    
-    .animated-icon3.open span:nth-child(2) {
-    width: 0%;
-    opacity: 0;
-    }
-    .white{
-        background-color: white;
-    }
+    color :white;
+}
+
+
 th, tr{
     color : white;
     text-align: center;
@@ -99,4 +57,7 @@ th, tr{
             padding: 0.5rem;
         }
     }
+}
+.marge{
+    margin : 0.5rem;
 }
