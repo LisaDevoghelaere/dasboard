@@ -17,7 +17,7 @@ require_once('db.php');
         ?>
         <main class="container">
             <h2><p>Suivit de consommation des ampoules</p></h2>
-            <table class="table">
+            <table class="table table-responsive">
                 <tr><!-- Penser à mettre des id pour rendre le tableau accessible aux malvoyants-->
                     <th>id</th>
                     <th>Marque</th>
@@ -59,7 +59,7 @@ require_once('db.php');
                 echo '<p>Aucune donnée disponible</p>';
             }
             ?>
-            <p><a href="edit.php" class="btn btn-outline-primary"> Ajouter </a></p>
+            <p><a href="edit.php" class="btn btn-outline-primary marge"> Ajouter </a></p>
         </main>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
