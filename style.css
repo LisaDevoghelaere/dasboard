@@ -1,4 +1,8 @@
 /*----------------------------Variables--------------------------*/
+/*--------------------- Mediaqueries------------------*/
+/*@media screen and (min-width : 992px){}  <-9 pouces*/
+/*@media screen and (min-width: 480px) and (max-width : 991px){}  <-tablette*/
+/*@media screen and (max-width: 479px){}smartphone*/
 /*---------------------------------Base----------------------*/
 body {
   margin: 0, auto;
@@ -20,7 +24,7 @@ body h1 a {
 
 body h1 a:hover {
   text-decoration: none;
-  color: #f7aa06;
+  color: #007bff;
 }
 
 .container {
@@ -48,14 +52,25 @@ th, tr {
   padding: 1rem;
   border-radius: 8px;
   background-color: #1b2a47;
-  max-width: 15rem;
+  max-width: 60%;
+  margin: auto;
 }
 
 .bloc form {
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.bloc form input {
+input {
   margin-bottom: 0.8rem;
   border-radius: 5px;
   border: 0;
@@ -64,5 +79,11 @@ th, tr {
 
 .marge {
   margin: 0.5rem;
+}
+
+@media screen and (max-width: 479px) {
+  .bloc {
+    max-width: 15rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

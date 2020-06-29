@@ -3,6 +3,15 @@ $titre: 'MuseoModerno', cursive;
 $cp-txt: 'Lato', sans-serif;
 $bg-main: #152036;
 $bg-secondary: #1b2a47;
+$yellow: rgb(252, 228, 19);
+$bleu: #007bff;
+/*--------------------- Mediaqueries------------------*/
+$desktop : "screen and (min-width : 992px)";
+/*@media screen and (min-width : 992px){}  <-9 pouces*/
+$tablette : "screen and (min-width: 480px) and (max-width : 991px)";
+/*@media screen and (min-width: 480px) and (max-width : 991px){}  <-tablette*/
+$smartphone : "screen and (max-width: 479px)";
+/*@media screen and (max-width: 479px){}smartphone*/
 /*---------------------------------Base----------------------*/
 body
 {
@@ -16,10 +25,10 @@ body
         font-size: 2rem;
         a{
             text-decoration: none;
-            color : rgb(252, 228, 19);
+            color : $yellow;
             &:hover{
                 text-decoration: none;
-                color: rgb(247, 170, 6);
+                color: $bleu;
             }
         }
     }
@@ -47,17 +56,27 @@ th, tr{
     padding: 1rem;
     border-radius: 8px;
     background-color: $bg-secondary;
-    max-width: 15rem;
+    max-width: 60%;
+    margin: auto;
     form{
         margin: auto;
-        input{
-            margin-bottom: 0.8rem;
-            border-radius: 5px;
-            border: 0;
-            padding: 0.5rem;
-        }
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        flex-wrap: wrap;
     }
+}
+input{
+    margin-bottom: 0.8rem;
+    border-radius: 5px;
+    border: 0;
+    padding: 0.5rem;
 }
 .marge{
     margin : 0.5rem;
+}
+@media#{$smartphone}{
+    .bloc{
+        max-width: 15rem;  
+    }
 }
