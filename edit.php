@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('db.php');
 $marque = '';
 $puissance = '';
@@ -20,7 +21,7 @@ if(isset($_GET['id'])&& isset($_GET['edit'])){
     $data = $sth->fetch(PDO::FETCH_ASSOC);
     //Condition pour sécuriser le formulaire 
     if(gettype($data) === "boolean"){
-        header('Location: index.php');
+        header('Location: accueil.php');
         exit;
     }
     $marque = $data['marque'];
@@ -81,7 +82,7 @@ if(count($_POST)>0){
             $sth->bindParam(':id', $id, PDO::PARAM_INT);
         }
         $sth->execute();
-        header('Location: index.php');
+        header('Location: accueil.php');
     }
 }
 ?>

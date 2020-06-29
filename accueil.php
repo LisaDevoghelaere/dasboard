@@ -1,6 +1,13 @@
 <?php
+session_start();
 require_once('db.php');
-if(isset($_POST['mdp'])&& $_POST['mdp'] == "passe"){
+
+//if(isset($_POST['mdp'])&& $_POST['mdp'] == "passe"){
+//if(isset($_SESSION['mdp'])&& $_SESSION['mdp'] == "passe"){
+if(isset($_POST)){
+    $_SESSION['mdp'] = $_POST['mdp'];
+    if($_SESSION['mdp'] == "passe"){
+
 ?>
     <!DOCTYPE html>
     <html lang="fr">
@@ -71,8 +78,10 @@ if(isset($_POST['mdp'])&& $_POST['mdp'] == "passe"){
         </body>
     </html>
 <?php
-}else{
-    header('Location: index.php');
-    //echo "<p>ce n'est pas le bon mot de passe</p><a href='login> login</a>";
+
+    }else{
+        header('Location: index.php');
+        //echo "<p>ce n'est pas le bon mot de passe</p><a href='login> login</a>";
+    }
 }
 ?>
