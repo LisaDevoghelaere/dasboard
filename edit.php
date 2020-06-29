@@ -96,7 +96,7 @@ if(count($_POST)>0){
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php         require_once 'barnav.php'; ?>
+<?php         require_once 'barnav.php'; ?>
 <main class="container">
     <?php
     
@@ -112,29 +112,35 @@ if(count($_POST)>0){
     <div class="bloc">
         <form action="" method="post">
             <div>
-                <input type="text" name="marque" id="marque" placeholder="marque" value="<?=$marque; ?>">
+                <div>
+                    <input type="text" name="marque" id="marque" placeholder="marque" value="<?=$marque; ?>">
+                </div>
+                <div>
+                    <input type="text" name="puissance" id="puissance" placeholder="puissance" value="<?=$puissance; ?>">
+                </div>
             </div>
             <div>
-                <input type="text" name="puissance" id="puissance" placeholder="puissance" value="<?=$puissance; ?>">
+                <div>
+                    <input type="text" name="position" id="position" placeholder="position" value="<?=$position; ?>">
+                </div>
+                <div>      
+                    <input type="text" name="etage" id="etage" placeholder="etage" value="<?=$etage; ?>">
+                </div>
             </div>
             <div>
-                <input type="text" name="position" id="position" placeholder="position" value="<?=$position; ?>">
-            </div>
-            <div>      
-                <input type="text" name="etage" id="etage" placeholder="etage" value="<?=$etage; ?>">
-            </div>
-            <div>
-                <input type="date" name="changement" id="changement" class="except" placeholder="date de changement" value="<?=$changement; ?>">
-            </div>
-            <div>
-                <?php
-                    if(isset($_GET['id'])&& isset($_GET['edit'])){
-                        $txtButton = "Modifier";
-                    }else{
-                        $txtButton = "Ajouter";
-                    }
-                ?>
-                <button type="submit" class="btn btn-outline-primary"><?=$txtButton ?></button>
+                <div>
+                    <input type="date" name="changement" id="changement" class="except" placeholder="date de changement" value="<?=$changement; ?>">
+                </div>
+                <div>
+                    <?php
+                        if(isset($_GET['id'])&& isset($_GET['edit'])){
+                            $txtButton = "Modifier";
+                        }else{
+                            $txtButton = "Ajouter";
+                        }
+                    ?>
+                    <button type="submit" class="btn btn-outline-primary"><?=$txtButton ?></button>
+                </div>
             </div>
             <?php
                 if(isset($_GET['id'])&& isset($_GET['edit'])){
