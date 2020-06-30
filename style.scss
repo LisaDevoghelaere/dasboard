@@ -33,50 +33,22 @@ body
         }
     }
 }
-.container{
-    max-width: 1180px;
-    margin: auto;
-}
+
 header{
     border-bottom: 2px solid white;   
 }
 h2{
     font-family: $titre;
     font-size: 2rem;
-    padding: 1rem;
+    padding: 2rem;
     color :white;
 }
-
-
 th, tr{
     color : white;
     text-align: center;
 }
 .bloc{
-    padding: 1rem;
-    border-radius: 8px;
     background-color: $bg-secondary;
-    max-width: 60%;
-    margin: auto;
-    form{
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        flex-wrap: wrap;
-    }
-}
-input{
-    margin-bottom: 0.8rem;
-    border-radius: 5px;
-    border: 0;
-    padding: 0.5rem;
-}
-.marge{
-    margin : 0.5rem;
-}
-@media#{$smartphone}{
-    .bloc{
-        max-width: 15rem;  
-    }
+    border-radius: 10px;
+    padding : 0.8rem;
 }

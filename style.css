@@ -27,11 +27,6 @@ body h1 a:hover {
   color: #007bff;
 }
 
-.container {
-  max-width: 1180px;
-  margin: auto;
-}
-
 header {
   border-bottom: 2px solid white;
 }
@@ -39,7 +34,7 @@ header {
 h2 {
   font-family: "MuseoModerno", cursive;
   font-size: 2rem;
-  padding: 1rem;
+  padding: 2rem;
   color: white;
 }
 
@@ -49,41 +44,8 @@ th, tr {
 }
 
 .bloc {
-  padding: 1rem;
-  border-radius: 8px;
   background-color: #1b2a47;
-  max-width: 60%;
-  margin: auto;
-}
-
-.bloc form {
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-input {
-  margin-bottom: 0.8rem;
-  border-radius: 5px;
-  border: 0;
-  padding: 0.5rem;
-}
-
-.marge {
-  margin: 0.5rem;
-}
-
-@media screen and (max-width: 479px) {
-  .bloc {
-    max-width: 15rem;
-  }
+  border-radius: 10px;
+  padding: 0.8rem;
 }
 /*# sourceMappingURL=style.css.map */
