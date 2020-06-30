@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 require_once('db.php');
 
 if(isset($_GET['id'])){
@@ -8,5 +10,5 @@ if(isset($_GET['id'])){
     $sth->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
     $sth->execute();
 }
-header('Location: index.php');
+header('Location: accueil.php');
 ?>

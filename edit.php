@@ -86,76 +86,81 @@ if(count($_POST)>0){
     }
 }
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=MuseoModerno:wght@500;700&display=swap" rel="stylesheet"> 
-    <title>ajouter-modifier</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<?php         require_once 'barnav.php'; ?>
-<main class="container">
-    <?php
-    
-
-
-        if(isset($_GET['id'])&& isset($_GET['edit'])){
-            $txtTitle = "Modifier";
-        }else{
-                $txtTitle= "Ajouter";
-        }
-    ?>
-    <h2><?=$txtTitle ?></h2>
-    <div class="bloc">
-        <form action="" method="post">
-            <div>
-                <div>
-                    <input type="text" name="marque" id="marque" placeholder="marque" value="<?=$marque; ?>">
-                </div>
-                <div>
-                    <input type="text" name="puissance" id="puissance" placeholder="puissance" value="<?=$puissance; ?>">
-                </div>
-            </div>
-            <div>
-                <div>
-                    <input type="text" name="position" id="position" placeholder="position" value="<?=$position; ?>">
-                </div>
-                <div>      
-                    <input type="text" name="etage" id="etage" placeholder="etage" value="<?=$etage; ?>">
-                </div>
-            </div>
-            <div>
-                <div>
-                    <input type="date" name="changement" id="changement" class="except" placeholder="date de changement" value="<?=$changement; ?>">
-                </div>
-                <div>
-                    <?php
-                        if(isset($_GET['id'])&& isset($_GET['edit'])){
-                            $txtButton = "Modifier";
-                        }else{
-                            $txtButton = "Ajouter";
-                        }
-                    ?>
-                    <button type="submit" class="btn btn-outline-primary"><?=$txtButton ?></button>
-                </div>
-            </div>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=MuseoModerno:wght@500;700&display=swap" rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <title>Mon Dashboard</title>
+    </head>
+    <body>
+        <?php         require_once 'header.php'; ?>
+        <main class="container-fluid">
             <?php
                 if(isset($_GET['id'])&& isset($_GET['edit'])){
-            ?>
-                <input type="hidden" name="edit" value="1">
-                <input type="hidden" name="id" value="<?=$id; ?>">
-            <?php 
-                } 
-            ?>
-        </form>
-    </div>
-</main>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>    
-</body>
+                    $txtTitle = "Modifier";
+                }else{
+                        $txtTitle= "Ajouter";
+                }
+            ?>           
+            <div class="container">
+                <h2><?=$txtTitle ?></h2>
+                <div class="bloc">
+                    <form action="" method="post">
+                        
+                        <div class="form-group">
+                            <label for="marque">Marque</label>
+                            <input type="text" name="marque" id="marque" placeholder="marque" class="form-control"  value="<?=$marque; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="puissance">Puissance</label>
+                            <input type="text" name="puissance" id="puissance" placeholder="puissance" class="form-control"  value="<?=$puissance; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position</label>
+                            <input type="text" name="position" id="position" placeholder="position" class="form-control"  value="<?=$position; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="etage">Étage</label>
+                            <input type="text" name="etage" id="etage" placeholder="étage" class="form-control"  value="<?=$etage; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="changement">Date de changement</label><br>
+                            <input type="date" name="changement" id="changement" class="except" placeholder="date de changement" class="form-control"  value="<?=$changement; ?>">
+                        </div>
+                        <div>
+                            <?php
+                                if(isset($_GET['id'])&& isset($_GET['edit'])){
+                                    $txtButton = "Modifier";
+                                }else{
+                                    $txtButton = "Ajouter";
+                                }
+                            ?>
+                            <button type="submit" class="btn btn-outline-primary"><?=$txtButton ?></button>
+                        </div>
+                        
+                        <?php
+                            if(isset($_GET['id'])&& isset($_GET['edit'])){
+                        ?>
+                            <input type="hidden" name="edit" value="1">
+                            <input type="hidden" name="id" value="<?=$id; ?>">
+                        <?php 
+                            } 
+                        ?>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
 </html>
