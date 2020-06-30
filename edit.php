@@ -110,49 +110,51 @@ if(count($_POST)>0){
             ?>           
             <div class="container">
                 <h2><?=$txtTitle ?></h2>
-                <div class="bloc">
-                    <form action="" method="post">
-                        
-                        <div class="form-group">
-                            <label for="marque">Marque</label>
-                            <input type="text" name="marque" id="marque" placeholder="marque" class="form-control"  value="<?=$marque; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="puissance">Puissance</label>
-                            <input type="text" name="puissance" id="puissance" placeholder="puissance" class="form-control"  value="<?=$puissance; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="position">Position</label>
-                            <input type="text" name="position" id="position" placeholder="position" class="form-control"  value="<?=$position; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="etage">Étage</label>
-                            <input type="text" name="etage" id="etage" placeholder="étage" class="form-control"  value="<?=$etage; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="changement">Date de changement</label><br>
-                            <input type="date" name="changement" id="changement" class="except" placeholder="date de changement" class="form-control"  value="<?=$changement; ?>">
-                        </div>
-                        <div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 bloc">
+                        <form action="" method="post">
+                            
+                            <div class="form-group">
+                                <label for="marque">Marque</label>
+                                <input type="text" name="marque" id="marque" placeholder="marque" class="form-control"  value="<?=$marque; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="puissance">Puissance</label>
+                                <input type="text" name="puissance" id="puissance" placeholder="puissance" class="form-control"  value="<?=$puissance; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="position">Position</label>
+                                <input type="text" name="position" id="position" placeholder="position" class="form-control"  value="<?=$position; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="etage">Étage</label>
+                                <input type="text" name="etage" id="etage" placeholder="étage" class="form-control"  value="<?=$etage; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="changement">Date de changement</label><br>
+                                <input type="date" name="changement" id="changement" class="except" placeholder="date de changement" class="form-control"  value="<?=$changement; ?>">
+                            </div>
+                            <div>
+                                <?php
+                                    if(isset($_GET['id'])&& isset($_GET['edit'])){
+                                        $txtButton = "Modifier";
+                                    }else{
+                                        $txtButton = "Ajouter";
+                                    }
+                                ?>
+                                <button type="submit" class="btn btn-outline-primary"><?=$txtButton ?></button>
+                            </div>
+                            
                             <?php
                                 if(isset($_GET['id'])&& isset($_GET['edit'])){
-                                    $txtButton = "Modifier";
-                                }else{
-                                    $txtButton = "Ajouter";
-                                }
                             ?>
-                            <button type="submit" class="btn btn-outline-primary"><?=$txtButton ?></button>
-                        </div>
-                        
-                        <?php
-                            if(isset($_GET['id'])&& isset($_GET['edit'])){
-                        ?>
-                            <input type="hidden" name="edit" value="1">
-                            <input type="hidden" name="id" value="<?=$id; ?>">
-                        <?php 
-                            } 
-                        ?>
-                    </form>
+                                <input type="hidden" name="edit" value="1">
+                                <input type="hidden" name="id" value="<?=$id; ?>">
+                            <?php 
+                                } 
+                            ?>
+                        </form>
+                    </div>
                 </div>
             </div>
         </main>

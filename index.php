@@ -16,21 +16,26 @@ require_once('db.php');
     <title>Mon Dashboard</title>
   </head>
     <body>
+        <?php require_once('header.php'); ?>
         <main class="container-fluid">
             <div class="container">
                 <h2>Entrez votre mot de passe</h2>
-                <form action="accueil.php" method="post">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Utilisateur</label>
-                        <input type="text" class="form-control" id="username" aria-describedby="user"  name="username">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 bloc">
+                        <form action="accueil.php" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Utilisateur</label>
+                                <input type="text" class="form-control" id="username" aria-describedby="user"  name="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Mot de passe</label>
+                                <input type="password" class="form-control" name="mdp">
+                                <small id="mdp-Help" class="form-text text-muted">Votre mot de passe vous a été communiqué préalablement par mail</small>
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary">Envoyer</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Mot de passe</label>
-                        <input type="password" class="form-control" name="mdp">
-                        <small id="mdp-Help" class="form-text text-muted">Votre mot de passe vous a été communiqué préalablement par mail</small>
-                    </div>
-                    <button type="submit" class="btn btn-outline-primary">Envoyer</button>
-                </form>
+                </div>
             </div>
             
         </main>
