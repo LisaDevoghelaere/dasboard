@@ -12,7 +12,9 @@
                 <div class="col-6">
                    <p class="pseudo">
                         Bonjour <?=$_SESSION['user']?>
+                        <a href="deconnexion.php" title="Au revoir!"><img src="media/door-white.svg" alt="icone de deconnexion"></a>
                    </p>
+                   
                 </div>
             </div>
         </div>

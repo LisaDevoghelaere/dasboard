@@ -25,8 +25,8 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
         <main class="container-fluid">
             <div class="container">
                 <h2><p>Suivit de consommation des ampoules</p></h2>
-                <p><a href="edit.php" class="btn btn-outline-primary marge"> Ajouter </a></p>
-                <a href="deconnexion.php">Déconnexion</a>
+                <p><a href="edit.php" class="btn btn-outline-primary marge"><i class="fas fa-plus-circle"></i></a></p>
+                
                 <table class="table table-responsive">
                     <tr id="ligne">
                         <th id="identifiant">id</th>
@@ -60,7 +60,7 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
                             echo'<td>' . $ligne['etage'] . '</td> ';
                             
                             echo '<td>'.$intlDateFormater->format(strtotime($ligne['changement'])).'</td>';
-                            echo '<td><a class="btn btn-outline-success" href="edit.php?edit=1&id='.$ligne['id'].'">Modifier</a> <a class="btn btn-outline-danger" href="delete.php?id='.$ligne['id'].'" >Supprimer</a></td>';
+                            echo '<td><a class="btn btn-outline-success marge-d" href="edit.php?edit=1&id='.$ligne['id'].'"><i class="fas fa-edit"></i></a> <a class="btn btn-outline-danger" href="delete.php?id='.$ligne['id'].'" ><i class="fas fa-trash-alt"></i></a></td>';
                             echo '</tr>';
                         }
                     ?>
@@ -71,7 +71,19 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
                 }
 
                 ?>
-                <!-- <p><a href="edit.php" class="btn btn-outline-primary marge"> Ajouter </a></p> -->
+                <p><a href="edit.php" class="btn btn-outline-primary marge"><i class="fas fa-plus-circle"></i></a></p>
+
+                <!--modal-->
+            <div id="modal" class="hidden">
+                <div id="modal_dialog">
+                    <p id="modal_text">êtes-vous sûr de vouloir supprimer la ligne ?</p>
+                    <div id="modal_area_btn">
+                        <button id="modal_yes">Oui</button>
+                        <button id="modal_no">Non</button>
+                    </div>
+                </div>
+            </div>
+
         </main>
 
         <!-- Optional JavaScript -->
@@ -79,6 +91,8 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/5458cc12a8.js" crossorigin="anonymous"></script>       
+        <script src="script.js"></script>
     </body>
 </html>
 <?php

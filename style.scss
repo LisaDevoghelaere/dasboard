@@ -46,6 +46,9 @@ h2{
 th, tr{
     color : white;
     text-align: center;
+    &:hover{
+        color : $yellow;
+    }
 }
 .bloc{
     background-color: $bg-secondary;
@@ -57,4 +60,7 @@ th, tr{
     padding-top: 1rem;
     font-size: 1rem;
     font-weight: 700;
+}
+.marge-d{
+    margin-right: 0.5rem;
 }

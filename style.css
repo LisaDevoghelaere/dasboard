@@ -43,6 +43,10 @@ th, tr {
   text-align: center;
 }
 
+th:hover, tr:hover {
+  color: #fce413;
+}
+
 .bloc {
   background-color: #1b2a47;
   border-radius: 10px;
@@ -54,5 +58,9 @@ th, tr {
   padding-top: 1rem;
   font-size: 1rem;
   font-weight: 700;
+}
+
+.marge-d {
+  margin-right: 0.5rem;
 }
 /*# sourceMappingURL=style.css.map */
