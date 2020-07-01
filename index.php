@@ -1,7 +1,33 @@
 <?php
-session_start();
+//session_start();
 require_once('db.php');
+$mdp = '';
+$user = '';
+$message = '';
 
+    if(isset($_POST['envoyer'])&&  !empty($_POST['user']) && !empty($_POST['mdp'])){
+        
+        $sql="SELECT username, mot_de_passe FROM login WHERE username = :user";
+        $sth = $dbh->prepare($sql);
+        $sth->bindValue(':user', $_POST['user'], PDO::PARAM_STR);  
+        $sth->execute();
+        $data = $sth->fetch();
+
+        $user = $data['username'];
+        $mdp = $data['mot_de_passe'];
+        session_start();
+        
+        if($_POST['user'] == $user && $_POST['mdp'] == $mdp){
+            $_SESSION['valid'] = true;
+            $_SESSION['timeout'] = time();
+            $_SESSION['user'] = $user;
+            $_SESSION['mdp'] = $mdp;
+            header('Location: accueil.php');
+        }else{
+            $msg = "Le nom d'utilisateur ou mot de passe est invalide";
+            //echo $msg;
+        }
+    }
 ?>
 <!doctype html>
 <html lang="fr">
@@ -16,24 +42,25 @@ require_once('db.php');
     <title>Mon Dashboard</title>
   </head>
     <body>
-        <?php require_once('header.php'); ?>
+        
         <main class="container-fluid">
             <div class="container">
                 <h2>Entrez votre mot de passe</h2>
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-8 col-lg-6 bloc">
-                        <form action="accueil.php" method="post">
+                        <form action="" method="post">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Utilisateur</label>
-                                <input type="text" class="form-control" id="username" aria-describedby="user"  name="username">
+                                <label for="user">Utilisateur</label>
+                                <input type="text" class="form-control" id="user" aria-describedby="user"  name="user">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Mot de passe</label>
+                                <label for="password">Mot de passe</label>
                                 <input type="password" class="form-control" name="mdp">
                                 <small id="mdp-Help" class="form-text text-muted">Votre mot de passe vous a été communiqué préalablement par mail</small>
                             </div>
-                            <button type="submit" class="btn btn-outline-primary">Envoyer</button>
+                            <button type="submit" class="btn btn-outline-primary" name="envoyer">Envoyer</button>
                         </form>
+                        
                     </div>
                 </div>
             </div>

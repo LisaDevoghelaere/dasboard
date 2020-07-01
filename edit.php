@@ -1,6 +1,9 @@
 <?php
 session_start();
 require_once('db.php');
+if(empty($_SESSION['user'])){
+    header('Location: index.php');
+} 
 $marque = '';
 $puissance = '';
 $position = '';
@@ -32,7 +35,7 @@ if(isset($_GET['id'])&& isset($_GET['edit'])){
     $id = htmlentities($_GET['id']);
 }
 
-//On vérifie si le formulaire a bien été soumi
+//On vérifie si le formulaire a bien été soumis
 if(count($_POST)>0){
     if(strlen(trim($_POST['marque'])) !== 0){
         $marque = trim($_POST['marque']);
@@ -110,6 +113,7 @@ if(count($_POST)>0){
             ?>           
             <div class="container">
                 <h2><?=$txtTitle ?></h2>
+                <a href="deconnexion.php">Déconnexion</a>
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-8 col-lg-6 bloc">
                         <form action="" method="post">

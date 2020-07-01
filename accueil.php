@@ -1,15 +1,10 @@
 <?php
 session_start();
 require_once('db.php');
-
-//if(isset($_POST['mdp'])&& $_POST['mdp'] == "passe"){
-//if(isset($_SESSION['mdp'])&& $_SESSION['mdp'] == "passe"){
-if(isset($_POST)){
-    $_SESSION['mdp'] = $_POST['mdp'];
-    if($_SESSION['mdp'] !== "passe"){
-        header('Location: index.php');
-    }
-}
+//var_dump($_SESSION['user'])
+if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
+    header('Location: index.php');
+} 
 ?>
 <!doctype html>
 <html lang="fr">
@@ -31,6 +26,7 @@ if(isset($_POST)){
             <div class="container">
                 <h2><p>Suivit de consommation des ampoules</p></h2>
                 <p><a href="edit.php" class="btn btn-outline-primary marge"> Ajouter </a></p>
+                <a href="deconnexion.php">Déconnexion</a>
                 <table class="table table-responsive">
                     <tr id="ligne">
                         <th id="identifiant">id</th>
