@@ -9,7 +9,8 @@ $red : #dc3545;
 /*--------------------- Mediaqueries------------------*/
 $desktop : "screen and (min-width : 992px)";
 /*@media screen and (min-width : 992px){}  <-9 pouces*/
-$tablette : "screen and (min-width: 480px) and (max-width : 991px)";
+$tablette : "screen and (min-width: 768px) and (max-width : 991px)";
 /*@media screen and (min-width: 480px) and (max-width : 991px){}  <-tablette*/
+$mini-tablette : "screen and (min-width: 480px) and (max-width : 767px)";
 $smartphone : "screen and (max-width: 479px)";
 /*@media screen and (max-width: 479px){}smartphone*/
