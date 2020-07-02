@@ -27,7 +27,7 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
                 <h2><p>Suivit de consommation des ampoules</p></h2>
                 <p><a href="edit.php" class="btn btn-outline-primary marge"><i class="fas fa-plus-circle"></i></a></p>
                 
-                <table class="table table-responsive">
+                <table class="table">
                     <tr id="ligne">
                         <th id="identifiant">id</th>
                         <th id="marque">Marque</th>
@@ -60,17 +60,12 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
                             echo'<td>' . $ligne['etage'] . '</td> ';
                             
                             echo '<td>'.$intlDateFormater->format(strtotime($ligne['changement'])).'</td>';
-                            echo '<td><a class="btn btn-outline-success marge-d" href="edit.php?edit=1&id='.$ligne['id'].'"><i class="fas fa-edit"></i></a> <a class="btn btn-outline-danger" href="delete.php?id='.$ligne['id'].'" ><i class="fas fa-trash-alt"></i></a></td>';
+                            echo '<td><a class="btn btn-outline-success marge-d" href="edit.php?edit=1&id='.$ligne['id'].'"><i class="fas fa-edit"></i></a> 
+                            <a class="btn btn-outline-danger btn_delete" href="delete.php?id='.$ligne['id'].'" ><i class="fas fa-trash-alt"></i></a></td>';
                             echo '</tr>';
                         }
                     ?>
             </table>
-                <?php
-                if(count($resultat) === 0){
-                    echo '<p>Aucune donnée disponible</p>';
-                }
-
-                ?>
                 <p><a href="edit.php" class="btn btn-outline-primary marge"><i class="fas fa-plus-circle"></i></a></p>
 
                 <!--modal-->
