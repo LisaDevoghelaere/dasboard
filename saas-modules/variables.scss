@@ -1,0 +1,15 @@
+/*----------------------------Variables--------------------------*/
+$titre: 'MuseoModerno', cursive;
+$cp-txt: 'Lato', sans-serif;
+$bg-main: #152036;
+$bg-secondary: #1b2a47;
+$yellow: rgb(252, 228, 19);
+$bleu: #007bff;
+$red : #dc3545;
+/*--------------------- Mediaqueries------------------*/
+$desktop : "screen and (min-width : 992px)";
+/*@media screen and (min-width : 992px){}  <-9 pouces*/
+$tablette : "screen and (min-width: 480px) and (max-width : 991px)";
+/*@media screen and (min-width: 480px) and (max-width : 991px){}  <-tablette*/
+$smartphone : "screen and (max-width: 479px)";
+/*@media screen and (max-width: 479px){}smartphone*/
