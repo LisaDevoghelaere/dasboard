@@ -128,11 +128,33 @@ if(count($_POST)>0){
                             </div>
                             <div class="form-group">
                                 <label for="position">Position</label>
-                                <input type="text" name="position" id="position" placeholder="position" class="form-control"  value="<?=$position; ?>">
+                                <select name="position" id="position" class="form-control">
+                                <?php
+                                   $tableau = array('Centre', 'Gauche', 'Droite');
+                                   foreach($tableau as $ligne){
+                                       $choix = '';
+                                       if($position == $ligne){
+                                           $choix = "selected";
+                                       }
+                                    echo '<option value="' . $ligne . '"' . $choix .'>' . $ligne .'</option>', "\n";
+                                   }
+                                ?>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="etage">Étage</label>
-                                <input type="text" name="etage" id="etage" placeholder="étage" class="form-control"  value="<?=$etage; ?>">
+                                <select name="etage" id="etage" class="form-control">
+                                    <?php 
+                                        for($i=0; $i<12; $i++){
+                                        $selected = '';
+                                        if ($etage == $i){
+                                            $selected = "selected";
+                                        }
+                                        echo '<option value="' .$i. '"' .$selected. '>'.$i.'</option>', "\n";               
+                                        } 
+                                    ?>
+                                    </option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="changement">Date de changement</label><br>
