@@ -60,8 +60,8 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
                             echo'<td>' . $ligne['etage'] . '</td> ';
                             
                             echo '<td>'.$intlDateFormater->format(strtotime($ligne['changement'])).'</td>';
-                            echo '<td><a class="btn btn-outline-success marge-d" href="edit.php?edit=1&id='.$ligne['id'].'"><i class="fas fa-edit"></i></a> 
-                            <a class="btn btn-outline-danger btn_delete" href="delete.php?id='.$ligne['id'].'" ><i class="fas fa-trash-alt"></i></a></td>';
+                            echo '<td><a class="btn btn-outline-success marge-d pos-r" href="edit.php?edit=1&id='.$ligne['id'].'"><i class="fas fa-edit"></i></a> 
+                            <a class="btn btn-outline-danger btn_delete pos-r" href="delete.php?id='.$ligne['id'].'" ><i class="fas fa-trash-alt"></i></a></td>';
                             echo '</tr>';
                         }
                     ?>
