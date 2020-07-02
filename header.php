@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h1><a href="index.php">Mon Dashboard</a></h1>
+                    <h1><a href="accueil.php">Mon Dashboard</a></h1>
                 </div>
             
                 <div class="col-6">
