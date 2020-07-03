@@ -124,7 +124,20 @@ if(count($_POST)>0){
                             </div>
                             <div class="form-group">
                                 <label for="puissance">Puissance</label>
-                                <input type="text" name="puissance" id="puissance" placeholder="puissance" class="form-control"  value="<?=$puissance; ?>">
+                                <select name="puissance" class="form-control">
+                                    <?php
+                                        $array = array('25W', '60W', '75W', '100W', '150W');
+                                    
+                                        foreach($array as $arraylight){ 
+                                            $select = '';    
+                                            // Sauvegarde de la puissance sélectionnée en cas d'édition               
+                                            if($puissance == $arraylight){
+                                            $select = "selected";
+                                            }
+                                            echo '<option value="'.$arraylight.'"' .$select. '>'.$arraylight.'</option>';
+                                        }
+                                    ?> 
+                                </select>        
                             </div>
                             <div class="form-group">
                                 <label for="position">Position</label>
@@ -158,7 +171,7 @@ if(count($_POST)>0){
                             </div>
                             <div class="form-group">
                                 <label for="changement">Date de changement</label><br>
-                                <input type="date" name="changement" id="changement" class="except" placeholder="date de changement" class="form-control"  value="<?=$changement; ?>">
+                                <input type="date" name="changement" id="changement" class="form-control except" placeholder="date de changement" class="form-control"  value="<?=$changement; ?>">
                             </div>
                             <div>
                                 <?php

@@ -3,10 +3,38 @@
 /*@media screen and (min-width : 992px){}  <-9 pouces*/
 /*@media screen and (min-width: 480px) and (max-width : 991px){}  <-tablette*/
 /*@media screen and (max-width: 479px){}smartphone*/
-/*---------------------------------Base----------------------*/
+@media screen and (min-width: 480px) and (max-width : 767px) {
+  .pos-r {
+    display: block;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 2.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .pos-r {
+    display: block;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 2.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
 body {
   margin: 0, auto;
   font-family: "Lato", sans-serif;
+  font-size: 0.8rem;
   color: white;
   background-color: #152036;
 }
@@ -14,7 +42,8 @@ body {
 body h1 {
   font-family: "MuseoModerno", cursive;
   padding: 0.5rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  margin-bottom: 0;
 }
 
 body h1 a {
@@ -33,9 +62,11 @@ header {
 
 h2 {
   font-family: "MuseoModerno", cursive;
-  font-size: 2rem;
-  padding: 2rem;
+  font-size: 1.8rem;
+  padding: 1rem;
+  padding-bottom: 0.8rem;
   color: white;
+  text-align: center;
 }
 
 th, tr {
@@ -51,16 +82,110 @@ th:hover, tr:hover {
   background-color: #1b2a47;
   border-radius: 10px;
   padding: 0.8rem;
+  margin: auto;
 }
 
 .pseudo {
   text-align: right;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: 1rem;
   font-weight: 700;
 }
 
 .marge-d {
   margin-right: 0.5rem;
+}
+
+#modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  /*w pour width*/
+  height: 100vh;
+  /*h pour height*/
+  background-color: rgba(0, 0, 0, 0.45);
+  /* On peut faire un fond transparent ou assombrir le fond*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#modal.hidden {
+  display: none;
+}
+
+#modal_dialog {
+  width: 80%;
+  max-width: 500px;
+  padding: 40px;
+  background-color: #1b2a47;
+  min-height: 125px;
+  border-radius: 10px;
+}
+
+#modal_text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#modal_area_btn {
+  text-align: center;
+}
+
+#modal_yes, #modal_no {
+  text-align: center;
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#modal_no {
+  background-color: #fce413;
+}
+
+#modal_yes {
+  background-color: #dc3545;
+  margin-right: 20px;
+}
+
+.align_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.align_btn a {
+  margin-top: 0.85rem;
+  margin-left: 0.5rem;
+}
+
+.align_btn form {
+  padding: 0.5rem;
+}
+
+.alerte-rouge {
+  text-align: left;
+  color: #dc3545;
+  font-size: 0.8rem;
+  padding: 0.3rem;
 }
 /*# sourceMappingURL=style.css.map */

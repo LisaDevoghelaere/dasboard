@@ -1,28 +1,18 @@
-/*----------------------------Variables--------------------------*/
-$titre: 'MuseoModerno', cursive;
-$cp-txt: 'Lato', sans-serif;
-$bg-main: #152036;
-$bg-secondary: #1b2a47;
-$yellow: rgb(252, 228, 19);
-$bleu: #007bff;
-/*--------------------- Mediaqueries------------------*/
-$desktop : "screen and (min-width : 992px)";
-/*@media screen and (min-width : 992px){}  <-9 pouces*/
-$tablette : "screen and (min-width: 480px) and (max-width : 991px)";
-/*@media screen and (min-width: 480px) and (max-width : 991px){}  <-tablette*/
-$smartphone : "screen and (max-width: 479px)";
-/*@media screen and (max-width: 479px){}smartphone*/
-/*---------------------------------Base----------------------*/
+@import'saas-modules/variables.scss';
+@import'saas-modules/mediaqueries.scss';
+
 body
 {
     margin : 0, auto;
     font-family: $cp-txt;
+    font-size : 0.8rem;
     color: white;
     background-color: $bg-main;
     h1{
         font-family: $titre;
         padding: 0.5rem;
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 0;
         a{
             text-decoration: none;
             color : $yellow;
@@ -39,9 +29,11 @@ header{
 }
 h2{
     font-family: $titre;
-    font-size: 2rem;
-    padding: 2rem;
+    font-size: 1.8rem;
+    padding: 1rem;
+    padding-bottom: 0.8rem;
     color :white;
+    text-align: center;
 }
 th, tr{
     color : white;
@@ -54,13 +46,82 @@ th, tr{
     background-color: $bg-secondary;
     border-radius: 10px;
     padding : 0.8rem;
+    margin : auto;
 }
 .pseudo{
     text-align: right;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
+    margin-bottom: 0.5rem;
     font-size: 1rem;
     font-weight: 700;
 }
 .marge-d{
     margin-right: 0.5rem;
+}
+#modal{
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 100vw; /*w pour width*/
+    height : 100vh;/*h pour height*/
+    background-color: rgba(0,0,0,0.45); /* On peut faire un fond transparent ou assombrir le fond*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#modal.hidden{
+    display: none;
+}
+#modal_dialog{
+    width : 80%;
+    max-width: 500px;
+    padding: 40px;
+    background-color: $bg-secondary;
+    min-height: 125px;
+    border-radius: 10px;
+}
+#modal_text{
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+}
+#modal_area_btn{
+    text-align: center;
+}
+#modal_yes, #modal_no{
+    text-align: center;
+    font-size: 1rem;
+    color : black;
+    font-weight: bold;
+    padding: 10px;
+    border : none;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+#modal_no{
+    background-color:$yellow;
+}
+#modal_yes{
+    background-color: $red;
+    margin-right: 20px;
+}
+.align_btn{
+    display: flex;
+    justify-content: start;
+    align-content: flex-start;
+    a{
+        margin-top: 0.85rem;
+        margin-left: 0.5rem;
+    }
+    form{
+        padding: 0.5rem;
+    }
+}
+
+.alerte-rouge{
+    text-align: left;
+    color: $red;
+    font-size : 0.8rem;
+    padding : 0.3rem;
 }

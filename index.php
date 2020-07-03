@@ -1,9 +1,9 @@
 <?php
-//session_start();
+session_start();
 require_once('db.php');
 $mdp = '';
 $user = '';
-$message = '';
+$msg = '';
 
     if(isset($_POST['envoyer'])&&  !empty($_POST['user']) && !empty($_POST['mdp'])){
         
@@ -15,7 +15,6 @@ $message = '';
 
         $user = $data['username'];
         $mdp = $data['mot_de_passe'];
-        session_start();
         
         if($_POST['user'] == $user && $_POST['mdp'] == $mdp){
             $_SESSION['valid'] = true;
@@ -25,7 +24,7 @@ $message = '';
             header('Location: accueil.php');
         }else{
             $msg = "Le nom d'utilisateur ou mot de passe est invalide";
-            echo '<p class="alerte-rouge">' . $msg . '</p>';
+            //   echo '<p class="alerte-rouge">' . $msg . '</p>';
         }
     }
 ?>
@@ -57,7 +56,7 @@ $message = '';
                                 <label for="password">Mot de passe</label>
                                 <input type="password" class="form-control" name="mdp">
                                 <small id="mdp-Help" class="form-text text-muted">Votre mot de passe vous a été communiqué préalablement par mail</small>
-                                
+                                <p class="alerte-rouge"><?=$msg ?></p>
                             </div>
                             <button type="submit" class="btn btn-outline-primary" name="envoyer">Envoyer</button>
                         </form>
