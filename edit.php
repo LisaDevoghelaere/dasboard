@@ -115,7 +115,7 @@ if(count($_POST)>0){
                 <h2><?=$txtTitle ?></h2>
                 
                 <div class="row">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 bloc">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-8 bloc">
                         <form action="" method="post">
                             
                             <div class="form-group">

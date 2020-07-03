@@ -25,7 +25,7 @@ $message = '';
             header('Location: accueil.php');
         }else{
             $msg = "Le nom d'utilisateur ou mot de passe est invalide";
-            //echo $msg;
+            echo '<p class="alerte-rouge">' . $msg . '</p>';
         }
     }
 ?>
@@ -57,6 +57,7 @@ $message = '';
                                 <label for="password">Mot de passe</label>
                                 <input type="password" class="form-control" name="mdp">
                                 <small id="mdp-Help" class="form-text text-muted">Votre mot de passe vous a été communiqué préalablement par mail</small>
+                                
                             </div>
                             <button type="submit" class="btn btn-outline-primary" name="envoyer">Envoyer</button>
                         </form>

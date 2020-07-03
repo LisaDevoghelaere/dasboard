@@ -25,7 +25,14 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
         <main class="container-fluid">
             <div class="container">
                 <h2><p>Suivit de consommation des ampoules</p></h2>
-                <p><a href="edit.php" class="btn btn-outline-primary marge"><i class="fas fa-plus-circle"></i></a></p>
+                <div class="align_btn">
+                    <p><a href="edit.php" class="btn btn-outline-primary marge"><i class="fas fa-plus-circle"></i></a></p>
+                    <form class="form-inline my-2 my-lg-0" action="" method="post">
+                        <input class="form-control mr-sm-2" type="search" placeholder="chercher une ampoule" aria-label="Search" name="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit"><i class="fas fa-search"></i></button>
+                        <a href="accueil.php" class="btn btn-outline-success my-2 my-sm-0"><i class="fas fa-redo"></i></a>
+                    </form>
+                </div>
                 
                 <table class="table">
                     <tr id="ligne">
@@ -50,22 +57,44 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
 
                         $intlDateFormater = new IntlDateFormatter('fr_FR', IntlDateFormatter::SHORT, IntlDateFormatter::NONE);
                             //gestion format de date français
-                        //Pour afficher le tableau on fait un foreach qui parcoura le tableau
-                        foreach($resultat as $ligne){
-                            echo '<tr>';
-                            echo'<td>' . $ligne['id'] . '</td> ';
-                            echo'<td>' . $ligne['marque'] . '</td> ';
-                            echo'<td>' . $ligne['puissance'] . '</td> ';
-                            echo'<td>' . $ligne['position'] . '</td> ';
-                            echo'<td>' . $ligne['etage'] . '</td> ';
-                            
-                            echo '<td>'.$intlDateFormater->format(strtotime($ligne['changement'])).'</td>';
-                            echo '<td><a class="btn btn-outline-success marge-d pos-r" href="edit.php?edit=1&id='.$ligne['id'].'"><i class="fas fa-edit"></i></a> 
-                            <a class="btn btn-outline-danger btn_delete pos-r" href="delete.php?id='.$ligne['id'].'" ><i class="fas fa-trash-alt"></i></a></td>';
-                            echo '</tr>';
+                        if(!isset($_POST['search'])&& !isset($_POST['submit'])){
+                            //Pour afficher le tableau on fait un foreach qui parcoura le tableau
+                            foreach($resultat as $ligne){
+                                echo '<tr>';
+                                    echo'<td>' . $ligne['id'] . '</td> ';
+                                    echo'<td>' . $ligne['marque'] . '</td> ';
+                                    echo'<td>' . $ligne['puissance'] . '</td> ';
+                                    echo'<td>' . $ligne['position'] . '</td> ';
+                                    echo'<td>' . $ligne['etage'] . '</td> ';
+                                    
+                                    echo '<td>'.$intlDateFormater->format(strtotime($ligne['changement'])).'</td>';
+                                    echo '<td><a class="btn btn-outline-success marge-d pos-r" href="edit.php?edit=1&id='.$ligne['id'].'"><i class="fas fa-edit"></i></a> 
+                                    <a class="btn btn-outline-danger btn_delete pos-r" href="delete.php?id='.$ligne['id'].'" ><i class="fas fa-trash-alt"></i></a></td>';
+                                echo '</tr>';
+                            }
+                        }else{
+                            $sql = "SELECT id, marque, puissance, position, etage, changement FROM `ampoule` WHERE marque LIKE :search OR puissance LIKE :search OR position LIKE :search  OR etage LIKE :search OR changement LIKE :search ";
+                            $sth = $dbh->prepare($sql);
+                            $sth->bindValue(':search', '%' .$_POST['search'] . '%', PDO::PARAM_STR);  
+                            $sth->execute();
+                            while($ligne = $sth->fetch(PDO::FETCH_ASSOC)){
+                                echo '<tr>';
+                                    echo'<td>' . $ligne['id'] . '</td> ';
+                                    echo'<td>' . $ligne['marque'] . '</td> ';
+                                    echo'<td>' . $ligne['puissance'] . '</td> ';
+                                    echo'<td>' . $ligne['position'] . '</td> ';
+                                    echo'<td>' . $ligne['etage'] . '</td> ';
+                                    
+                                    echo '<td>'.$intlDateFormater->format(strtotime($ligne['changement'])).'</td>';
+                                    echo '<td><a class="btn btn-outline-success marge-d pos-r" href="edit.php?edit=1&id='.$ligne['id'].'"><i class="fas fa-edit"></i></a> 
+                                    <a class="btn btn-outline-danger btn_delete pos-r" href="delete.php?id='.$ligne['id'].'" ><i class="fas fa-trash-alt"></i></a></td>';
+                                echo '</tr>';
+                            }
+
                         }
                     ?>
             </table>
+            
                 <p><a href="edit.php" class="btn btn-outline-primary marge"><i class="fas fa-plus-circle"></i></a></p>
 
                 <!--modal-->
