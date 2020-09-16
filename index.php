@@ -9,7 +9,7 @@ $msg = '';
         
         $sql="SELECT username, mot_de_passe FROM login WHERE username = :user";
         $sth = $dbh->prepare($sql);
-        $sth->bindValue(':user', $_POST['user'], PDO::PARAM_STR);  
+        $sth->bindParam(':user', $_POST['user'], PDO::PARAM_STR);  
         $sth->execute();
         $data = $sth->fetch();
 
@@ -50,15 +50,15 @@ $msg = '';
                         <form action="" method="post">
                             <div class="form-group">
                                 <label for="user">Utilisateur</label>
-                                <input type="text" class="form-control" id="user" aria-describedby="user"  name="user">
+                                <input type="text" class="form-control" id="user" aria-describedby="user" placeholder="Lisa"  name="user">
                             </div>
                             <div class="form-group">
                                 <label for="password">Mot de passe</label>
-                                <input type="password" class="form-control" name="mdp">
+                                <input type="password" class="form-control" name="mdp" placeholder="gardien">
                                 <small id="mdp-Help" class="form-text text-muted">Votre mot de passe vous a été communiqué préalablement par mail</small>
                                 <p class="alerte-rouge"><?=$msg ?></p>
                             </div>
-                            <button type="submit" class="btn btn-outline-primary" name="envoyer">Envoyer</button>
+                            <button type="submit" class="btn btn-outline-primary btn-lg btn-block" name="envoyer">Envoyer</button>
                         </form>
                         
                     </div>

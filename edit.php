@@ -102,7 +102,7 @@ if(count($_POST)>0){
         <title>Mon Dashboard</title>
     </head>
     <body>
-        <?php         require_once 'header.php'; ?>
+        <?php require_once 'header.php'; ?>
         <main class="container-fluid">
             <?php
                 if(isset($_GET['id'])&& isset($_GET['edit'])){
@@ -120,7 +120,7 @@ if(count($_POST)>0){
                             
                             <div class="form-group">
                                 <label for="marque">Marque</label>
-                                <input type="text" name="marque" id="marque" placeholder="marque" class="form-control"  value="<?=$marque; ?>">
+                                <input type="text" name="marque" id="marque" placeholder="marque" class="form-control" required value="<?=$marque; ?>">
                             </div>
                             <div class="form-group">
                                 <label for="puissance">Puissance</label>
@@ -171,7 +171,7 @@ if(count($_POST)>0){
                             </div>
                             <div class="form-group">
                                 <label for="changement">Date de changement</label><br>
-                                <input type="date" name="changement" id="changement" class="form-control except" placeholder="date de changement" class="form-control"  value="<?=$changement; ?>">
+                                <input type="date" name="changement" required id="changement" class="form-control except" placeholder="date de changement" class="form-control"  value="<?=$changement; ?>">
                             </div>
                             <div>
                                 <?php
@@ -181,7 +181,7 @@ if(count($_POST)>0){
                                         $txtButton = '<i class="fas fa-plus-circle"></i>';
                                     }
                                 ?>
-                                <button type="submit" class="btn btn-outline-primary"><?=$txtButton ?></button>
+                                <button type="submit" class="btn btn-outline-primary btn-lg btn-block"><?=$txtButton ?></button>
                             </div>
                             
                             <?php

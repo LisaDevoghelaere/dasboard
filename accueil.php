@@ -24,7 +24,7 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
         ?>
         <main class="container-fluid">
             <div class="container">
-                <h2><p>Suivit de consommation des ampoules</p></h2>
+                <h2><p>Suivi de consommation des ampoules</p></h2>
                 <div class="align_btn">
                     <p><a href="edit.php" class="btn btn-outline-primary marge"><i class="fas fa-plus-circle"></i></a></p>
                     <form class="form-inline my-2 my-lg-0" action="" method="post">
@@ -44,7 +44,7 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
                         <th id="date">Date de changement</th>
                         <th id="modification">Modification</th>
                     </tr>
-            </div>
+            
                     <?php
                         //requête sql, préalablement testée (on u'tilise pas *)
                         $sql = "SELECT id, marque, puissance, position, etage, changement FROM ampoule";
@@ -93,9 +93,9 @@ if(empty($_SESSION['user'])&& empty($_SESSION['mdp'])){
 
                         }
                     ?>
-            </table>
+                </table>
             
-                <p><a href="edit.php" class="btn btn-outline-primary marge"><i class="fas fa-plus-circle"></i></a></p>
+                <p><a href="edit.php" class="btn btn-outline-primary marge btn-lg btn-block"><i class="fas fa-plus-circle"></i></a></p>
 
                 <!--modal-->
             <div id="modal" class="hidden">

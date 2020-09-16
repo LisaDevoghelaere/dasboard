@@ -34,7 +34,7 @@
 body {
   margin: 0, auto;
   font-family: "Lato", sans-serif;
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   color: white;
   background-color: #152036;
 }
@@ -72,6 +72,7 @@ h2 {
 th, tr {
   color: white;
   text-align: center;
+  font-size: 1.3rem;
 }
 
 th:hover, tr:hover {
@@ -89,7 +90,7 @@ th:hover, tr:hover {
   text-align: right;
   padding-top: 0.5rem;
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
@@ -187,5 +188,9 @@ th:hover, tr:hover {
   color: #dc3545;
   font-size: 0.8rem;
   padding: 0.3rem;
+}
+
+.table, label {
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=style.css.map */
